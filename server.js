@@ -11,6 +11,10 @@ app.use(cors());
 
 const url_base = 'https://www.frankfurter.app';
 
+app.get('/', (req, res) => {
+  res.send('Server is running!');
+});
+
 app.get('/api/latest', async (req, res) => {
   try {
     const response = await axios.get(`${url_base}/latest?from=USD`);
